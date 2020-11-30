@@ -1,0 +1,34 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf100
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 #include <stdio.h>\
+#include <math.h>\
+\
+int main()\
+\{\
+    int num, swap;\
+    int first, last, digits;\
+\
+    printf("Enter any number: ");\
+    scanf("%d", &num);\
+    last  = num % 10; \
+    digits     = (int) log10(num); \
+    first = (int) (num / pow(10, digits));\
+\
+    swap  = last;\
+    swap *= (int) round(pow(10, digits));\
+    swap += num % ((int)round(pow(10, digits)));\
+    swap -= last;\
+    swap += first;\
+\
+    printf("Original number = %d", num);\
+    printf("\\nNumber after swapping first and last digit: %d", swap);\
+\
+    return 0;\
+\}\
+}
